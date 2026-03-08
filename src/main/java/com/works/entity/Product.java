@@ -23,3 +23,5 @@ public class Product {
     @Column(precision = 10, scale = 2)
     private BigDecimal price;
 }
+
+// search -> iphone -> title, description, category, pageable

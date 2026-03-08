@@ -3,6 +3,10 @@ package com.works.service;
 import com.works.entity.Product;
 import com.works.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -50,6 +54,24 @@ public class ProductService {
         product.setPrice(p.getPrice());
 
         return productRepository.save(product);
+    }
+
+    public Page<Product> listPage(Integer page){
+        Pageable pageable = PageRequest.of(page, 10);
+        Page<Product> productPage = productRepository.findAll(pageable);
+        return productPage;
+    }
+
+    public Page<Product> search(String q, Integer page, String sortBy, String direction){
+
+        Sort sort = direction.equalsIgnoreCase("desc")
+                ? Sort.by(sortBy).descending()
+                : Sort.by(sortBy).ascending();
+
+        Pageable pageable = PageRequest.of(page, 10, sort);
+
+        return productRepository
+                .findByTitleContainsOrDescriptionContainsAllIgnoreCase(q, q, pageable);
     }
 
 
