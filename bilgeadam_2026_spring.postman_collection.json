@@ -1,0 +1,316 @@
+{
+  "info": {
+    "_postman_id": "11f5e945-80d0-4903-b4a1-06aee52a22f2",
+    "name": "bilgeadam_2026_spring",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1939021",
+    "_collection_link": "https://go.postman.co/collection/1939021-11f5e945-80d0-4903-b4a1-06aee52a22f2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8090/customer/register",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Kaan\",\n    \"surname\": \"Bilirim\",\n    \"email\": \"kaan@mail.com\",\n    \"password\": \"12345\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8090/customer/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "customer",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/customer/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"ali@mail.com\",\n    \"password\": \"12345\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8090/customer/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "customer",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/save",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"TV\",\n    \"description\": \"TV Detail\",\n    \"category\": \"elektronik\",\n    \"price\": 10000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8090/product/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/saveAll",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n{\"title\":\"MacBook Pro M3\",\"description\":\"Apple laptop bilgisayar\",\"category\":\"elektronik\",\"price\":75000.00},\n{\"title\":\"Samsung 65QLED TV\",\"description\":\"65 inç akıllı televizyon\",\"category\":\"elektronik\",\"price\":42000.00},\n{\"title\":\"Sony WH-1000XM5 Kulaklık\",\"description\":\"Kablosuz gürültü engelleyici kulaklık\",\"category\":\"elektronik\",\"price\":12000.00},\n{\"title\":\"iPhone 15 Pro\",\"description\":\"Apple akıllı telefon\",\"category\":\"elektronik\",\"price\":68000.00},\n{\"title\":\"Xiaomi Robot Süpürge\",\"description\":\"Akıllı robot süpürge\",\"category\":\"elektronik\",\"price\":18000.00},\n{\"title\":\"LG UltraGear Gaming Monitör\",\"description\":\"27 inç oyuncu monitörü\",\"category\":\"elektronik\",\"price\":14500.00},\n{\"title\":\"Asus ROG Laptop\",\"description\":\"Oyun bilgisayarı\",\"category\":\"elektronik\",\"price\":52000.00},\n{\"title\":\"Canon EOS R7 Kamera\",\"description\":\"Profesyonel fotoğraf makinesi\",\"category\":\"elektronik\",\"price\":39000.00},\n{\"title\":\"Apple Watch Series 9\",\"description\":\"Akıllı saat\",\"category\":\"elektronik\",\"price\":19000.00},\n{\"title\":\"Logitech MX Master Mouse\",\"description\":\"Profesyonel kablosuz mouse\",\"category\":\"elektronik\",\"price\":3200.00},\n\n{\"title\":\"Erkek Deri Ceket\",\"description\":\"Şık erkek deri ceket\",\"category\":\"tekstil\",\"price\":6500.00},\n{\"title\":\"Kadın Yazlık Elbise\",\"description\":\"Rahat yazlık elbise\",\"category\":\"tekstil\",\"price\":2100.00},\n{\"title\":\"Erkek Slim Fit Gömlek\",\"description\":\"Pamuklu erkek gömlek\",\"category\":\"tekstil\",\"price\":1100.00},\n{\"title\":\"Kadın Spor Tayt\",\"description\":\"Esnek spor taytı\",\"category\":\"tekstil\",\"price\":850.00},\n{\"title\":\"Kapüşonlu Sweatshirt\",\"description\":\"Unisex hoodie\",\"category\":\"tekstil\",\"price\":950.00},\n{\"title\":\"Kot Pantolon\",\"description\":\"Erkek denim pantolon\",\"category\":\"tekstil\",\"price\":1400.00},\n{\"title\":\"Kadın Kaşe Kaban\",\"description\":\"Kışlık kadın kaban\",\"category\":\"tekstil\",\"price\":4200.00},\n{\"title\":\"Pamuklu Tişört\",\"description\":\"Basic tişört\",\"category\":\"tekstil\",\"price\":450.00},\n{\"title\":\"Spor Eşofman Takımı\",\"description\":\"Rahat spor takım\",\"category\":\"tekstil\",\"price\":1700.00},\n{\"title\":\"Kışlık Atkı\",\"description\":\"Yün atkı\",\"category\":\"tekstil\",\"price\":350.00},\n\n{\"title\":\"BMW 3 Serisi\",\"description\":\"Sedan otomobil\",\"category\":\"araba\",\"price\":2800000.00},\n{\"title\":\"Audi A5\",\"description\":\"Sport coupe otomobil\",\"category\":\"araba\",\"price\":3200000.00},\n{\"title\":\"Mercedes C200\",\"description\":\"Lüks sedan otomobil\",\"category\":\"araba\",\"price\":3100000.00},\n{\"title\":\"Toyota Corolla\",\"description\":\"Ekonomik sedan\",\"category\":\"araba\",\"price\":1450000.00},\n{\"title\":\"Honda Civic\",\"description\":\"Popüler sedan otomobil\",\"category\":\"araba\",\"price\":1650000.00},\n{\"title\":\"Tesla Model Y\",\"description\":\"Elektrikli SUV\",\"category\":\"araba\",\"price\":3600000.00},\n{\"title\":\"Ford Ranger\",\"description\":\"Pickup araç\",\"category\":\"araba\",\"price\":2400000.00},\n{\"title\":\"Volkswagen Passat\",\"description\":\"Konforlu sedan\",\"category\":\"araba\",\"price\":2100000.00},\n{\"title\":\"Hyundai Tucson\",\"description\":\"SUV araç\",\"category\":\"araba\",\"price\":1950000.00},\n{\"title\":\"Renault Clio\",\"description\":\"Kompakt hatchback\",\"category\":\"araba\",\"price\":980000.00},\n\n{\"title\":\"Ahşap Yemek Masası\",\"description\":\"6 kişilik yemek masası\",\"category\":\"ev\",\"price\":9500.00},\n{\"title\":\"Modern Koltuk Takımı\",\"description\":\"Salon koltuk takımı\",\"category\":\"ev\",\"price\":42000.00},\n{\"title\":\"Çift Kişilik Yatak\",\"description\":\"Ortopedik yatak\",\"category\":\"ev\",\"price\":11000.00},\n{\"title\":\"Gardırop\",\"description\":\"3 kapılı dolap\",\"category\":\"ev\",\"price\":8700.00},\n{\"title\":\"Kitaplık\",\"description\":\"Ahşap kitap rafı\",\"category\":\"ev\",\"price\":3200.00},\n{\"title\":\"Çalışma Masası\",\"description\":\"Modern çalışma masası\",\"category\":\"ev\",\"price\":4500.00},\n{\"title\":\"Ofis Sandalyesi\",\"description\":\"Ergonomik sandalye\",\"category\":\"ev\",\"price\":3700.00},\n{\"title\":\"Mutfak Sandalyesi\",\"description\":\"4 adet sandalye seti\",\"category\":\"ev\",\"price\":2800.00},\n{\"title\":\"Duvar Saati\",\"description\":\"Dekoratif saat\",\"category\":\"ev\",\"price\":650.00},\n{\"title\":\"LED Avize\",\"description\":\"Modern tavan lambası\",\"category\":\"ev\",\"price\":1800.00},\n\n{\"title\":\"Lenovo ThinkPad Laptop\",\"description\":\"İş laptopu\",\"category\":\"elektronik\",\"price\":38000.00},\n{\"title\":\"Samsung Galaxy Tab\",\"description\":\"Android tablet\",\"category\":\"elektronik\",\"price\":14000.00},\n{\"title\":\"JBL Bluetooth Hoparlör\",\"description\":\"Taşınabilir hoparlör\",\"category\":\"elektronik\",\"price\":2600.00},\n{\"title\":\"PlayStation 5\",\"description\":\"Oyun konsolu\",\"category\":\"elektronik\",\"price\":26000.00},\n{\"title\":\"Nintendo Switch\",\"description\":\"El tipi oyun konsolu\",\"category\":\"elektronik\",\"price\":14500.00},\n{\"title\":\"Dell Ultrasharp Monitör\",\"description\":\"Profesyonel monitör\",\"category\":\"elektronik\",\"price\":17000.00},\n{\"title\":\"Apple AirPods Pro\",\"description\":\"Kablosuz kulaklık\",\"category\":\"elektronik\",\"price\":9500.00},\n{\"title\":\"GoPro Hero 12\",\"description\":\"Aksiyon kamerası\",\"category\":\"elektronik\",\"price\":21000.00},\n{\"title\":\"Razer Gaming Klavye\",\"description\":\"RGB mekanik klavye\",\"category\":\"elektronik\",\"price\":4200.00},\n{\"title\":\"Samsung SSD 2TB\",\"description\":\"Yüksek hızlı SSD\",\"category\":\"elektronik\",\"price\":6800.00},\n\n{\"title\":\"Kadın Deri Çanta\",\"description\":\"Şık omuz çantası\",\"category\":\"tekstil\",\"price\":2600.00},\n{\"title\":\"Erkek Spor Ayakkabı\",\"description\":\"Koşu ayakkabısı\",\"category\":\"tekstil\",\"price\":3100.00},\n{\"title\":\"Kadın Topuklu Ayakkabı\",\"description\":\"Şık ayakkabı\",\"category\":\"tekstil\",\"price\":2400.00},\n{\"title\":\"Erkek Takım Elbise\",\"description\":\"Klasik takım\",\"category\":\"tekstil\",\"price\":7200.00},\n{\"title\":\"Yün Kazak\",\"description\":\"Kışlık kazak\",\"category\":\"tekstil\",\"price\":1250.00},\n{\"title\":\"Kadın Trençkot\",\"description\":\"Bahar kabanı\",\"category\":\"tekstil\",\"price\":3300.00},\n{\"title\":\"Erkek Polo Tişört\",\"description\":\"Pamuk polo\",\"category\":\"tekstil\",\"price\":950.00},\n{\"title\":\"Kot Ceket\",\"description\":\"Denim ceket\",\"category\":\"tekstil\",\"price\":2100.00},\n{\"title\":\"Kadın Etek\",\"description\":\"Günlük etek\",\"category\":\"tekstil\",\"price\":800.00},\n{\"title\":\"Spor Şort\",\"description\":\"Erkek şort\",\"category\":\"tekstil\",\"price\":600.00},\n\n{\"title\":\"Skoda Octavia\",\"description\":\"Aile sedanı\",\"category\":\"araba\",\"price\":1750000.00},\n{\"title\":\"Peugeot 3008\",\"description\":\"SUV araç\",\"category\":\"araba\",\"price\":2050000.00},\n{\"title\":\"Kia Sportage\",\"description\":\"Modern SUV\",\"category\":\"araba\",\"price\":1980000.00},\n{\"title\":\"Volvo XC60\",\"description\":\"Premium SUV\",\"category\":\"araba\",\"price\":3900000.00},\n{\"title\":\"Mini Cooper\",\"description\":\"Kompakt şehir arabası\",\"category\":\"araba\",\"price\":2200000.00},\n{\"title\":\"Fiat Egea\",\"description\":\"Ekonomik sedan\",\"category\":\"araba\",\"price\":950000.00},\n{\"title\":\"Dacia Duster\",\"description\":\"Uygun fiyatlı SUV\",\"category\":\"araba\",\"price\":1100000.00},\n{\"title\":\"Mazda CX5\",\"description\":\"Japon SUV\",\"category\":\"araba\",\"price\":2600000.00},\n{\"title\":\"Jeep Compass\",\"description\":\"Arazi SUV\",\"category\":\"araba\",\"price\":2950000.00},\n{\"title\":\"Porsche Cayenne\",\"description\":\"Lüks SUV\",\"category\":\"araba\",\"price\":9500000.00},\n\n{\"title\":\"Yatak Odası Takımı\",\"description\":\"Komple yatak odası\",\"category\":\"ev\",\"price\":58000.00},\n{\"title\":\"Salon Sehpası\",\"description\":\"Orta sehpa\",\"category\":\"ev\",\"price\":2100.00},\n{\"title\":\"TV Ünitesi\",\"description\":\"Modern tv ünitesi\",\"category\":\"ev\",\"price\":5200.00},\n{\"title\":\"Mutfak Dolabı\",\"description\":\"Hazır mutfak dolabı\",\"category\":\"ev\",\"price\":18000.00},\n{\"title\":\"Halı 6m2\",\"description\":\"Salon halısı\",\"category\":\"ev\",\"price\":3400.00},\n{\"title\":\"Perde Seti\",\"description\":\"Fon perde\",\"category\":\"ev\",\"price\":2800.00},\n{\"title\":\"Banyo Dolabı\",\"description\":\"Lavabo altı dolap\",\"category\":\"ev\",\"price\":3900.00},\n{\"title\":\"Ayakkabılık\",\"description\":\"Giriş dolabı\",\"category\":\"ev\",\"price\":2400.00},\n{\"title\":\"Dekoratif Ayna\",\"description\":\"Duvar aynası\",\"category\":\"ev\",\"price\":1200.00},\n{\"title\":\"Masa Lambası\",\"description\":\"Gece lambası\",\"category\":\"ev\",\"price\":750.00},\n\n{\"title\":\"HP LaserJet Yazıcı\",\"description\":\"Lazer yazıcı\",\"category\":\"elektronik\",\"price\":8500.00},\n{\"title\":\"TP-Link WiFi Router\",\"description\":\"Kablosuz modem\",\"category\":\"elektronik\",\"price\":2100.00},\n{\"title\":\"Apple iPad Air\",\"description\":\"Tablet bilgisayar\",\"category\":\"elektronik\",\"price\":24000.00},\n{\"title\":\"Samsung Smart Watch\",\"description\":\"Akıllı saat\",\"category\":\"elektronik\",\"price\":9800.00},\n{\"title\":\"DJI Mini 4 Drone\",\"description\":\"Kamera drone\",\"category\":\"elektronik\",\"price\":35000.00},\n\n{\"title\":\"Kadın Spor Mont\",\"description\":\"Kışlık mont\",\"category\":\"tekstil\",\"price\":3100.00},\n{\"title\":\"Erkek Kışlık Bot\",\"description\":\"Deri bot\",\"category\":\"tekstil\",\"price\":2800.00},\n{\"title\":\"Kadın Şal\",\"description\":\"Pamuk şal\",\"category\":\"tekstil\",\"price\":420.00},\n{\"title\":\"Erkek Deri Kemer\",\"description\":\"Hakiki deri kemer\",\"category\":\"tekstil\",\"price\":650.00},\n{\"title\":\"Çocuk Eşofman\",\"description\":\"Çocuk spor takımı\",\"category\":\"tekstil\",\"price\":900.00}\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8090/product/saveAll",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "saveAll"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/list",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/product/list",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/get/3",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/product/get/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "get",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/delete/2",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/product/delete/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "delete",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/update/3",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\n        \"category\": \"araba\",\n        \"description\": \"Audi Detail\",\n        \"price\": 11000.00,\n        \"title\": \"Audi A5 AX\"\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8090/product/update/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "update",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/listPage",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/product/listPage?page=9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "listPage"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "9",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/product/search",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/product/search?q=a&page=1&sortBy=price&direction=asc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "product",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "a"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "sortBy",
+              "value": "price",
+              "type": "text"
+            },
+            {
+              "key": "direction",
+              "value": "asc",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
