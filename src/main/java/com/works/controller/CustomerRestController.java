@@ -1,7 +1,9 @@
 package com.works.controller;
 
 import com.works.entity.Customer;
+import com.works.entity.dto.CustomerLoginDto;
 import com.works.entity.dto.CustomerRegisterDto;
+import com.works.entity.dto.CustomerResultDto;
 import com.works.service.CustomerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +22,13 @@ public class CustomerRestController {
     final CustomerService customerService;
 
     @PostMapping("register")
-    public Customer register(@Valid @RequestBody CustomerRegisterDto customerRegisterDto){
+    public CustomerResultDto register(@Valid @RequestBody CustomerRegisterDto customerRegisterDto){
         return customerService.customerRegister(customerRegisterDto);
+    }
+
+    @PostMapping("login")
+    public CustomerResultDto login(@Valid @RequestBody CustomerLoginDto customerLoginDto){
+        return customerService.customerLogin(customerLoginDto);
     }
 
 }

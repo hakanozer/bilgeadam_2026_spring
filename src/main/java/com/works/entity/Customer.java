@@ -1,5 +1,6 @@
 package com.works.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,6 +21,7 @@ public class Customer {
     @Column(unique = true, length = 150)
     private String email;
 
+    @JsonIgnore
     @Column(length = 1000)
     private String password;
 
