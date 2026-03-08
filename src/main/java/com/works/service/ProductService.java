@@ -33,6 +33,25 @@ public class ProductService {
         return productOptional.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
     }
 
+    public void deleteById(Long id){
+        boolean exists = productRepository.existsById(id);
+        if(!exists){
+            throw new RuntimeException("Product not found :" + id);
+        }
+        productRepository.deleteById(id);
+    }
+
+    public Product update(Long id, Product p){
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found :" + id));
+
+        product.setTitle(p.getTitle());
+        product.setDescription(p.getDescription());
+        product.setPrice(p.getPrice());
+
+        return productRepository.save(product);
+    }
+
 
 
 }

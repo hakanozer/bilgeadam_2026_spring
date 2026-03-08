@@ -3,6 +3,7 @@ package com.works.controller;
 import com.works.entity.Product;
 import com.works.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +33,17 @@ public class ProductRestController {
     @GetMapping("get/{id}")
     public Product findById(@PathVariable Long id){
         return productService.findById(id);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable Long id){
+        productService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("update/{id}")
+    public Product update(@PathVariable Long id, @RequestBody Product p){
+        return productService.update(id, p);
     }
 
 }

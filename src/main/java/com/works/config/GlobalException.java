@@ -26,4 +26,12 @@ public class GlobalException {
                 }).toList();
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> handleRuntime(RuntimeException e) {
+        Map<String, String> map = new HashMap<>();
+        map.put("error", e.getMessage());
+        return map;
+    }
+
 }
