@@ -3,6 +3,8 @@ package com.works.service;
 import com.works.entity.Product;
 import com.works.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -32,11 +34,13 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    @Cacheable(value = "product", key = "#id")
     public Product findById(Long id){
         Optional<Product> productOptional = productRepository.findById(id);
         return productOptional.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
     }
 
+    @CacheEvict(value = {"product","listCache"}, allEntries = true)
     public void deleteById(Long id){
         boolean exists = productRepository.existsById(id);
         if(!exists){
@@ -45,6 +49,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    @CacheEvict(value = {"product","listCache"}, allEntries = true)
     public Product update(Long id, Product p){
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found :" + id));
@@ -56,6 +61,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    @Cacheable(value = "listCache")
     public Page<Product> listPage(Integer page){
         Pageable pageable = PageRequest.of(page, 10);
         Page<Product> productPage = productRepository.findAll(pageable);
